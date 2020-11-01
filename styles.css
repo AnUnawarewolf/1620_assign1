@@ -1,0 +1,126 @@
+body {
+    --dark_gray: RGBA(45, 45, 48, 0.88);
+    --black: RGBA(33, 33, 35, 0.95);
+    --orange: RGBA(255, 69, 0, 0.88);
+    --light_gray: RGBA(40, 40, 42, 0.8);
+    /* background-image: url("Clockbirds scaled up.png"); */
+    background-color: var(--dark_gray);
+    color: white;
+    font-family: 'Roboto', serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Titillium Web', sans-serif;;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 125px 1fr 125px;
+    height: 100vh;
+    grid-template-areas: 
+        "header  header"
+        "sidebar content"
+        "footer  footer";
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+    background-color: var(--black);
+    border-bottom: 2px solid var(--orange);
+    margin-bottom: 5px;
+}
+
+.sidebar {
+    background-color: var(--dark_gray);
+    grid-area: sidebar;
+    margin: 4px;
+    margin-left: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.sidebar > h2 {
+    margin-left: 10px;
+}
+
+.main {
+    grid-area: content;
+    background-color: var(--dark_gray);
+    margin: 4px;
+    margin-right: 0;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.top-buttons {
+    margin-top: 10px;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    color: white;
+    background-color: #FF4500;
+    font-family: 'Roboto', serif;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+}
+
+.light_theme {
+    color: black;
+    background-color: #ffae90;
+}
+
+.textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+textarea {
+    background-color: var(--light_gray);
+    border: 1px solid var(--light_gray);
+    color: white;
+    border-radius: 10px;
+    font-family: 'Roboto', serif;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--black);
+    border-top: 2px solid var(--orange);
+    margin-top: 5px;
+}
+
+.touch {
+    display: flex;
+    justify-content: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    /* scale: 8%; */
+}
+
+.img {
+    width: 2%;
+    height: 2%;
+}
+
+
