@@ -3,7 +3,6 @@ body {
     --black: RGBA(33, 33, 35, 0.95);
     --orange: RGBA(255, 69, 0, 0.88);
     --light_gray: RGBA(40, 40, 42, 0.8);
-    /* background-image: url("Clockbirds scaled up.png"); */
     background-color: var(--dark_gray);
     color: white;
     font-family: 'Roboto', serif;
@@ -17,13 +16,14 @@ h1, h2, h3 {
 
 .wrap {
     display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-template-rows: 125px 1fr 125px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 3fr 105px;
     height: 100vh;
     grid-template-areas: 
-        "header  header"
-        "sidebar content"
-        "footer  footer";
+        "header"
+        "sidebar"
+        "content"
+        "footer";
 }
 
 .header {
@@ -32,18 +32,18 @@ h1, h2, h3 {
     align-items: center;
     grid-area: header;
     background-color: var(--black);
-    border-bottom: 2px solid var(--orange);
-    margin-bottom: 5px;
 }
 
 .sidebar {
     background-color: var(--dark_gray);
     grid-area: sidebar;
     margin: 4px;
-    margin-left: 0;
     border-radius: 10px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+}
+
+.sidebar li {
+    display: inline;
+    padding: 5px;
 }
 
 .sidebar > h2 {
@@ -54,14 +54,32 @@ h1, h2, h3 {
     grid-area: content;
     background-color: var(--dark_gray);
     margin: 4px;
-    margin-right: 0;
     border-radius: 10px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 }
 
 .top-buttons {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
+}
+
+.textarea {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 85%;
+    height: 50%;
+    background-color: var(--light_gray);
+    border: 1px solid var(--light_gray);
+    color: white;
+    border-radius: 10px;
+    font-family: 'Roboto', serif;
 }
 
 .bottom-buttons {
@@ -85,21 +103,6 @@ h1, h2, h3 {
     background-color: #ffae90;
 }
 
-.textarea {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    border-radius: 10px;
-}
-
-textarea {
-    background-color: var(--light_gray);
-    border: 1px solid var(--light_gray);
-    color: white;
-    border-radius: 10px;
-    font-family: 'Roboto', serif;
-}
-
 .footer {
     grid-area: footer;
     background-color: var(--black);
@@ -107,7 +110,7 @@ textarea {
     margin-top: 5px;
 }
 
-.touch {
+.contact {
     display: flex;
     justify-content: center;
 }
@@ -119,8 +122,50 @@ textarea {
 }
 
 .img {
-    width: 2%;
-    height: 2%;
+    width: 3%;
+    height: 3%;
+    min-width: 30px;
+    min-height: 30px;
 }
 
+@media screen and (min-width: 550px) {
+    .wrap {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 125px 1fr 125px;
+        height: 100vh;
+        grid-template-areas: 
+            "header  header"
+            "sidebar content"
+            "footer  footer";
+    }
 
+    .header {
+        border-bottom: 2px solid var(--orange);
+        margin-bottom: 5px;
+    }
+
+    .sidebar {
+        background-color: var(--dark_gray);
+        margin: 4px;
+        border-radius: 10px;
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border: 0;
+    }
+
+    .main {
+        margin-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .top-buttons {
+        display: unset;
+    }
+
+    .textarea {
+        justify-content: left;
+    }
+}
