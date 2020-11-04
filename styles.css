@@ -32,6 +32,8 @@ h1, h2, h3 {
     align-items: center;
     grid-area: header;
     background-color: var(--black);
+    border-bottom: 2px solid var(--orange);
+    margin-bottom: 5px;
 }
 
 .sidebar {
@@ -138,11 +140,6 @@ textarea {
             "header  header"
             "sidebar content"
             "footer  footer";
-    }
-
-    .header {
-        border-bottom: 2px solid var(--orange);
-        margin-bottom: 5px;
     }
 
     .sidebar {
