@@ -135,6 +135,11 @@ h1, h2, h3 {
     min-height: 30px;
 }
 
+.note_list .btn{
+    max-width: 10ch;
+    word-wrap: break-word;
+}
+
 /* -------------- Light Mode stuff --------------*/
 .body-light {
     background-color: #ffac8b;

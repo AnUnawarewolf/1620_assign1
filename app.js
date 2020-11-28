@@ -9,6 +9,7 @@ let notesArray = [{ title:"note one", body:"some text" },
                   { title: "note two", body:"some text" }]
 
 saveButton.addEventListener("click", () => {
+    const notesUl = document.querySelector(".note_list")
     if (textarea.value !== '') {
         let lines = textarea.value.split("\n")
         note = {}
@@ -20,6 +21,14 @@ saveButton.addEventListener("click", () => {
             note.body += `${lines[start]}\n`
             start++
         }
+        
+        let newLiEl = document.createElement("li")
+        let newLiBtn = document.createElement("button")
+        newLiBtn.classList.add("btn")
+        newLiBtn.innerHTML = lines[0]
+        newLiEl.appendChild(newLiBtn)
+        notesUl.appendChild(newLiEl)
+        
         notesArray.push(note)
     console.log(notesArray)
     }
