@@ -10,13 +10,12 @@
     margin: 0;
 }
 
-.body-light {
-    background-color: rgb(241, 234, 232);
-    color: var(--black);
-}
-
 h1, h2, h3 {
     font-family: 'Titillium Web', sans-serif;;
+}
+
+.hide_note {
+    display: none;
 }
 
 .wrap {
@@ -64,10 +63,6 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
-.mainside-light {
-    background-color: rgb(216, 209, 207);
-}
-
 .top-buttons {
     display: flex;
     justify-content: center;
@@ -93,12 +88,6 @@ h1, h2, h3 {
     font-family: 'Roboto', serif;
 }
 
-.light-text {
-    background-color: RGBA(33, 33, 35, 0.1);
-    border: 1px solid RGBA(33, 33, 35, 0.1);
-    color: black;
-}
-
 .bottom-buttons {
     display: flex;
     justify-content: center;
@@ -110,13 +99,9 @@ h1, h2, h3 {
     font-family: 'Roboto', serif;
     font-size: 15px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 0;
     margin: 10px;
-}
-
-.light-btn {
-    background-color: var(--black);
 }
 
 .btn:hover {
@@ -130,12 +115,6 @@ h1, h2, h3 {
     background-color: var(--black);
     border-top: 2px solid var(--orange);
     margin-top: 5px;
-}
-
-.headerfooter-light {
-    background-color: RGB(33, 33, 35);
-    color: white;
-    border-color: var(--orange);
 }
 
 .contact {
@@ -156,11 +135,37 @@ h1, h2, h3 {
     min-height: 30px;
 }
 
+/* Light Mode stuff */
+.body-light {
+    background-color: rgb(241, 234, 232);
+    color: var(--black);
+}
+
+.mainside-light {
+    background-color: rgb(216, 209, 207);
+}
+
+.light-text {
+    background-color: RGBA(33, 33, 35, 0.1);
+    border: 1px solid RGBA(33, 33, 35, 0.1);
+    color: black;
+}
+
+.light-btn {
+    background-color: var(--black);
+}
+
+.headerfooter-light {
+    background-color: RGB(33, 33, 35);
+    color: white;
+    border-color: var(--orange);
+}
+
 @media screen and (min-width: 550px) {
     .wrap {
         display: grid;
         grid-template-columns: 150px 1fr;
-        grid-template-rows: 125px 1fr 125px;
+        grid-template-rows: 125px 1fr 130px;
         height: 100vh;
         grid-template-areas: 
             "header  header"
