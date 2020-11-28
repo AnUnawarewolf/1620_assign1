@@ -3,9 +3,6 @@
     --black: RGBA(33, 33, 35, 0.95);
     --orange: RGBA(255, 69, 0, 0.88);
     --light_gray: RGBA(40, 40, 42, 0.8);
-    --white_bg: RGBA(205, 205, 244, 0.8);
-    --white_gray: RGBA(197, 197, 225, 0.88);
-    --whitish: RGBA(165, 165, 195, 0.95);
     background-color: var(--dark_gray);
     color: white;
     font-family: 'Roboto', serif;
@@ -14,8 +11,8 @@
 }
 
 .body-light {
-    background-color: var(--white_bg);
-    color: #141414;
+    background-color: rgb(241, 234, 232);
+    color: var(--black);
 }
 
 h1, h2, h3 {
@@ -68,7 +65,7 @@ h1, h2, h3 {
 }
 
 .mainside-light {
-    background-color: var(--white_gray);
+    background-color: rgb(216, 209, 207);
 }
 
 .top-buttons {
@@ -97,9 +94,9 @@ h1, h2, h3 {
 }
 
 .light-text {
-    background-color: var(--whitish);
-    border: 1px solid var(--whitish);
-    color: #070707;
+    background-color: RGBA(33, 33, 35, 0.1);
+    border: 1px solid RGBA(33, 33, 35, 0.1);
+    color: black;
 }
 
 .bottom-buttons {
@@ -118,6 +115,10 @@ h1, h2, h3 {
     margin: 10px;
 }
 
+.light-btn {
+    background-color: var(--black);
+}
+
 .btn:hover {
     cursor: pointer;
     background-color: #ffae90;
@@ -132,7 +133,9 @@ h1, h2, h3 {
 }
 
 .headerfooter-light {
-    background-color: var(--whitish);
+    background-color: RGB(33, 33, 35);
+    color: white;
+    border-color: var(--orange);
 }
 
 .contact {
