@@ -1,13 +1,21 @@
-body {
+.body-base {
     --dark_gray: RGBA(45, 45, 48, 0.88);
     --black: RGBA(33, 33, 35, 0.95);
     --orange: RGBA(255, 69, 0, 0.88);
     --light_gray: RGBA(40, 40, 42, 0.8);
+    --white_bg: RGBA(205, 205, 244, 0.8);
+    --white_gray: RGBA(197, 197, 225, 0.88);
+    --whitish: RGBA(165, 165, 195, 0.95);
     background-color: var(--dark_gray);
     color: white;
     font-family: 'Roboto', serif;
     padding: 0;
     margin: 0;
+}
+
+.body-light {
+    background-color: var(--white_bg);
+    color: #141414;
 }
 
 h1, h2, h3 {
@@ -59,6 +67,10 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
+.mainside-light {
+    background-color: var(--white_gray);
+}
+
 .top-buttons {
     display: flex;
     justify-content: center;
@@ -74,7 +86,7 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
-textarea {
+.main-text {
     width: 85%;
     height: 50%;
     background-color: var(--light_gray);
@@ -82,6 +94,12 @@ textarea {
     color: white;
     border-radius: 10px;
     font-family: 'Roboto', serif;
+}
+
+.light-text {
+    background-color: var(--whitish);
+    border: 1px solid var(--whitish);
+    color: #070707;
 }
 
 .bottom-buttons {
@@ -100,9 +118,10 @@ textarea {
     margin: 10px;
 }
 
-.light_theme {
-    color: black;
+.btn:hover {
+    cursor: pointer;
     background-color: #ffae90;
+    color: black
 }
 
 .footer {
@@ -110,6 +129,10 @@ textarea {
     background-color: var(--black);
     border-top: 2px solid var(--orange);
     margin-top: 5px;
+}
+
+.headerfooter-light {
+    background-color: var(--whitish);
 }
 
 .contact {
@@ -143,7 +166,6 @@ textarea {
     }
 
     .sidebar {
-        background-color: var(--dark_gray);
         margin: 4px;
         border-radius: 10px;
         margin-left: 0;
