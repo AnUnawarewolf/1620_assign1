@@ -88,6 +88,15 @@ h1, h2, h3 {
     font-family: 'Roboto', serif;
 }
 
+.note_error {
+    display: inline;
+    color: red;
+}
+
+.note_exists {
+    display: none;
+}
+
 .bottom-buttons {
     display: flex;
     justify-content: center;
@@ -142,7 +151,7 @@ h1, h2, h3 {
 
 /* -------------- Light Mode stuff --------------*/
 .body-light {
-    background-color: #ffac8b;
+    background-color: #ffcbb7;
     color: var(--black);
 }
 

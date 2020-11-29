@@ -5,38 +5,45 @@ const cancelButton = document.querySelector(".cancel")
 const saveButton = document.querySelector(".save")
 const textarea = document.querySelector(".main-text")
 
+let isLight = false
 let notesArray = [{ title:"note one", body:"some text" }, 
                   { title: "note two", body:"some text" }]
 
-saveButton.addEventListener("click", () => {
-    const notesUl = document.querySelector(".note_list")
-    if (textarea.value !== '') {
-        let lines = textarea.value.split("\n")
-        note = {}
-        note.title = lines[0]
+function addError() {
+    const error = document.querySelector(".note_error")
+    error.classList.remove("note_exists")
+}
 
-        start = 1
-        note.body = ''
-        for (let i = 0; i < lines.length; i++) {
-            note.body += `${lines[start]}\n`
-            start++
-        }
-        
-        let newLiEl = document.createElement("li")
-        let newLiBtn = document.createElement("button")
-        newLiBtn.classList.add("btn")
-        newLiBtn.innerHTML = lines[0]
-        newLiEl.appendChild(newLiBtn)
-        notesUl.appendChild(newLiEl)
-        
-        notesArray.push(note)
-    console.log(notesArray)
+function removeError() {
+    const error = document.querySelector(".note_error")
+    error.classList.add("note_exists")
+}
+
+function checkTitle(newTitle) {
+    for (let note of notesArray) {
+        if (note.title == newTitle) {
+            return true
+        } 
     }
-})
+}
+
+function createNoteBtn(title) {
+    const newLiEl = document.createElement("li")
+    const newLiBtn = document.createElement("button")
+    newLiBtn.classList.add("btn")
+    if (isLight) {
+        newLiBtn.classList.add("light-btn")
+    }
+    newLiBtn.innerHTML = title
+    newLiEl.appendChild(newLiBtn)
+    
+    const notesUl = document.querySelector(".note_list")
+    notesUl.appendChild(newLiEl)
+}
 
 cancelButton.addEventListener("click", () => {
     noteDiv.classList.add("hide_note")
-    console.log("cancel button clicked")
+    removeError()
 })
 
 newNoteButton.addEventListener("click", () => {
@@ -45,7 +52,33 @@ newNoteButton.addEventListener("click", () => {
     } else {
         textarea.value = ''
     }
-    console.log("new note button clicked")
+    removeError()
+})
+
+saveButton.addEventListener("click", () => {
+    if (textarea.value !== '') {
+        let lines = textarea.value.split("\n")
+        /* Checks to see if note title already exists*/
+        if (checkTitle(lines[0]) === true) {
+            addError()
+            return null
+        }
+        removeError()
+
+        let note = {}
+        note.title = lines[0]
+        note.body = ''
+        start = 1
+        for (let i = 0; i < lines.length; i++) {
+            note.body += `${lines[i++]}\n`
+            start++
+        }
+        
+        createNoteBtn(note.title)
+        
+        notesArray.push(note)
+    console.log(notesArray)
+    }
 })
 
 lightButton.addEventListener("click", () => {
@@ -72,6 +105,12 @@ lightButton.addEventListener("click", () => {
         lightButton.innerHTML = 'Dark Theme'
     } else {
         lightButton.innerHTML = 'Light Theme'
+    }
+
+    if (isLight) {
+        isLight = false
+    } else if (isLight === false) {
+        isLight = true
     }
     console.log("light button clicked")
 })
