@@ -4,6 +4,7 @@ const noteDiv = document.querySelector(".note")
 const cancelButton = document.querySelector(".cancel")
 const saveButton = document.querySelector(".save")
 const textarea = document.querySelector(".main-text")
+const noteList = document.querySelector(".note_list")
 
 let isLight = false
 let notesArray = [{ title:"note one", body:"some text" }, 
@@ -41,6 +42,17 @@ function createNoteBtn(title) {
     notesUl.appendChild(newLiEl)
 }
 
+function showNote(noteTitle) {
+    console.log('showNote ran')
+    for (note of notesArray) {
+        if (note.title == noteTitle) {
+            textarea.value = `${note.title}\n`
+            textarea.value += note.body
+        } else {
+        }
+    }
+}
+
 cancelButton.addEventListener("click", () => {
     noteDiv.classList.add("hide_note")
     removeError()
@@ -55,27 +67,31 @@ newNoteButton.addEventListener("click", () => {
     removeError()
 })
 
+noteList.addEventListener("click", e => {
+    const title = (e.target.innerHTML).toLowerCase()
+    showNote(title)
+    if (noteDiv.classList.contains("hide_note")) {
+        noteDiv.classList.remove("hide_note")
+    }
+})
+
 saveButton.addEventListener("click", () => {
     if (textarea.value !== '') {
         let lines = textarea.value.split("\n")
         /* Checks to see if note title already exists*/
-        if (checkTitle(lines[0]) === true) {
+        if (checkTitle(lines[0].toLowerCase()) === true) {
             addError()
             return null
         }
         removeError()
 
         let note = {}
-        note.title = lines[0]
+        createNoteBtn(lines[0])
+        note.title = lines[0].toLowerCase()
         note.body = ''
-        start = 1
-        for (let i = 0; i < lines.length; i++) {
-            note.body += `${lines[i++]}\n`
-            start++
+        for (let i = 1; i < lines.length; i++) {
+            note.body += `${lines[i]}\n`
         }
-        
-        createNoteBtn(note.title)
-        
         notesArray.push(note)
     console.log(notesArray)
     }

@@ -45,6 +45,8 @@ h1, h2, h3 {
     grid-area: sidebar;
     margin: 4px;
     border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar li {
