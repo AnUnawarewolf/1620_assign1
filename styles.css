@@ -121,28 +121,18 @@ h1, h2, h3 {
 }
 
 .footer {
+    align-items: center;
     grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--black);
     border-top: 2px solid var(--orange);
     margin-top: 5px;
 }
 
-.contact {
-    display: flex;
-    justify-content: center;
-}
-
-.icons {
-    display: flex;
-    justify-content: center;
-    /* scale: 8%; */
-}
-
-.img {
-    width: 3%;
-    height: 3%;
-    min-width: 30px;
-    min-height: 30px;
+.footer * {
+    margin: 1px;
 }
 
 .note_list .btn{
