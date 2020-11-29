@@ -21,7 +21,7 @@ h1, h2, h3 {
 .wrap {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 6fr 105px;
+    grid-template-rows: 100px 2fr 6fr 105px;
     height: 100vh;
     grid-template-areas: 
         "header"
@@ -45,8 +45,7 @@ h1, h2, h3 {
     grid-area: sidebar;
     margin: 4px;
     border-radius: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 .sidebar li {
@@ -196,6 +195,8 @@ h1, h2, h3 {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         border: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .main {
